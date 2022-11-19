@@ -1,8 +1,10 @@
 # helm-chart-nginx
 
+# if you want to install helm chart in k8s cluster
+
 helm install <release-name> . [or] -f your repo/values.yaml
 
-# if you want uninstall helm chart in k8s cluster
+# if you want to  uninstall helm chart in k8s cluster
 
 helm uninstall <release-name>
 
