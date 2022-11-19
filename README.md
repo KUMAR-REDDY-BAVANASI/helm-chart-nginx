@@ -6,7 +6,7 @@ helm install <release-name> . [or] -f your repo/values.yaml
 
 # if you want to  uninstall helm chart in k8s cluster
 
-helm uninstall <release-name>
+helm uninstall <<release-name>>
 
 # if you wanna do list of charts in k8s-cluster.
 
