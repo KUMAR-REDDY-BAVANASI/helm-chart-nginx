@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+  {{- include "nginx.labels" . | nindent 4 }}
+  name: nginx
+spec:
+  replicas: {{ .Values.app.replicas }}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: {{ .Values.app.image }}
+        name: nginx
+        resources:
+        {{- toYaml .Values.app.cpu_usage | nindent 10 -}}

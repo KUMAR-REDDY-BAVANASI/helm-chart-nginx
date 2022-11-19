@@ -1,0 +1,26 @@
+app:
+  replicas: 10
+  image: nginx
+  env: dev
+  cpu_usage:
+    limits:
+      cpu: 0.2
+      memory: 500Mi
+    requests:
+      cpu: 0.2
+      memory: 500Mi
+
+hpa:
+  enabled: false
+  maxreplicas: 10
+  minrplicas: 4
+  cpu_uti: 90
+
+config:
+  name: config.yaml
+  data: 
+    timeout: 2s
+    logfile: /app/var/log.txt
+    database:
+      ip: 120.21.31.10
+      name: ui-prod 
